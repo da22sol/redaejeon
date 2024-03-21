@@ -1,11 +1,9 @@
 @charset "utf-8";
 
 @charset "UTF-8";
-@import url('/font/webfonts_NotoSansKR.css');
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,900&display=swap');
-@import url('/main/css/fonts/webfonts_Gotham/webfonts_Gotham.css');
-@import url('/font/dingbat_xeicon.css');
-@import url('slick.css');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+@import url('./main.css');
+
 *,
 *::before,
 *::after {
@@ -25,7 +23,7 @@ body {
   margin: 0;
   padding: 0;
   font-size: 0.8rem;
-  font-family: 'Noto';
+  font-family: 'Noto Sans KR', sans-serif;
   font-weight: 300;
   color: #222;
   overflow: hidden;
@@ -119,6 +117,7 @@ strong {
 a {
   color: inherit;
   text-decoration: none;
+  font-family: 'Noto Sans KR', sans-serif;
 }
 
 button {
@@ -162,6 +161,7 @@ table {
   height: 100%;
   margin: 0 auto;
 }
+
 header {
   position: relative;
   background: transparent;
@@ -372,7 +372,7 @@ input[type='text' i] {
   font-family: 'kbiz';
   color: #333;
   position: relative;
-  font-weight: 400;
+  font-weight: bold;
 }
 .HeaderBar #gnb > li > a.on {
   color: #ff8519;
@@ -394,7 +394,8 @@ input[type='text' i] {
   top: 3rem;
   left: 0;
   width: 100%;
-  z-index: 2;
+
+  z-index: 18;
 }
 .HeaderBar #gnb > li > div > ul {
   padding: 0.5rem 0;
@@ -435,7 +436,7 @@ input[type='text' i] {
   top: 6.75rem;
   left: 0;
   width: 100%;
-  z-index: 1;
+  z-index: 15;
 }
 
 #header .all .HeaderBar {
