@@ -1,0 +1,289 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap');
+/* 메인 section1 */
+
+.layout {
+  position: relative;
+  max-width: 1400px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+#main {
+  width: 100%;
+  height: 100%;
+}
+
+#main::after {
+  display: block;
+  clear: both;
+  content: '';
+}
+
+.section01 {
+  position: relative;
+  overflow: hidden;
+  padding: 25px 0;
+}
+
+.section01:before {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '';
+  display: block;
+  background: #e7f2e4;
+}
+
+.ContentWrap {
+  display: flex;
+  margin-top: 40px;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+}
+
+/* 왼쪽 슬라이드 */
+.slide {
+  position: relative;
+  display: inline-flex;
+  width: 40%;
+  vertical-align: top;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-container {
+  width: 70%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.swiper-slide {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  border-radius: 30px;
+  width: 400px;
+  height: 480px;
+  display: block;
+}
+
+/* 오른쪽 */
+
+.right {
+  display: inline-block;
+  width: calc(50% - 40px);
+  margin-left: 40px;
+}
+
+/* 공지사항 */
+
+.notice {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  overflow: hidden;
+  position: relative;
+  height: 300px;
+  padding: 0 1rem;
+  background-color: #fff;
+  border-radius: 1.4rem;
+  margin-bottom: 30px;
+}
+
+.notice::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3.6rem;
+  background-color: #094a40;
+  box-sizing: border-box;
+}
+
+.sr-only {
+  overflow: hidden;
+  position: fixed;
+  top: -1px;
+  left: -1px;
+  width: 1px;
+  height: 1px;
+  font-size: 0;
+  line-height: 0;
+}
+
+.NoticeBtn {
+  height: 6rem;
+  color: #fff;
+  font-weight: 600;
+  position: relative;
+  margin-left: 2.4rem;
+  height: 80px;
+}
+
+.NoticeBtn::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  border: 1rem solid transparent;
+  border-bottom-color: #fff;
+  transform: translatex(-50%);
+  display: none;
+}
+
+.NoticeBtn.on::after {
+  display: block;
+}
+
+.NoticeBtn.on {
+  font-weight: bold;
+  color: #ffca78;
+}
+
+.NoticeDesc {
+  display: none;
+  order: 999;
+  width: 100%;
+}
+.NoticeBtn .NoticeBtn.on + .NoticeDesc {
+  display: flex;
+}
+
+.notice .NoticeBtn:not(:first-of-type):before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -1.4rem;
+  width: 1px;
+  height: 1.6rem;
+  background-color: #e6e1e1;
+  transform: translatey(-50%);
+  cursor: default;
+}
+
+.notice .NoticeDesc > ul > li > a [data-post-type='subject'] {
+  overflow: hidden;
+  flex: 1;
+  font-size: 16px;
+  font-weight: 600;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.notice .NoticeDesc > ul > li > a {
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: center;
+  padding: 8px 10px 8px 0;
+  display: flex;
+  border-bottom: 1px solid #a9a9a984;
+  margin-bottom: 15px;
+}
+
+/* 신청하기 */
+
+.apply {
+  overflow: hidden;
+  position: relative;
+  height: 200px;
+  padding: 20px;
+  margin-bottom: 30px;
+  /* background-color: rgba(255, 255, 255, 0.7); */
+  border-radius: 1.4rem;
+  /* border: 3px solid #094a40; */
+  vertical-align: top;
+}
+
+.apply h2 {
+  text-align: center;
+  font-size: 28px;
+  color: #094a40;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+.apply .ApplyIcon {
+  display: flex;
+}
+
+.apply .ApplyIcon > li {
+  padding: 0 2.1rem;
+  width: calc(100% / 4);
+}
+
+.apply .ApplyIcon > li > a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 1.6rem;
+}
+
+.apply .ApplyIcon li > a > span:before,
+.apply .ApplyIcon li > a > span:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 2rem;
+  transition: 0.35s opacity;
+}
+
+.apply .ApplyIcon li > a > span:before {
+  border: 1px solid #c6d3df;
+}
+
+.apply .ApplyIcon li > a > span:after {
+  border: 2px solid transparent;
+  background: linear-gradient(#fff, #fff),
+    linear-gradient(to right, #2a91c1, #6db36a, #8ec43e);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  opacity: 0;
+}
+
+.apply .ApplyIcon li > a > span .icon {
+  display: block;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.apply .ApplyIcon li > a > span .icon[data-quick-icon='01']:before {
+  background-image: url(/imgs/image-icon-quick01.svg);
+}
+
+.apply .ApplyIcon .icon01::after {
+}
+
+.apply .ApplyIcon .icon02::before {
+}
+
+.apply .ApplyIcon .icon02::after {
+}
+
+.apply .ApplyIcon .icon03::before {
+}
+
+.apply .ApplyIcon .icon03::after {
+}
+
+.apply .ApplyIcon .icon04::before {
+}
+
+.apply .ApplyIcon .icon04::after {
+}
