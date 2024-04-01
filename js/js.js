@@ -7,22 +7,28 @@ function menubtn() {
   const all = document.querySelector('#header');
   const htmlElement = document.documentElement;
 
-  const lastMenuItem = document.querySelector(
-    '#AllMenu>li .sub>ul>li:last-child'
-  );
+  const lastMenuItem = document.querySelector('#AllMenu>li .sub>ul>li:last-child');
 
   openbtn.addEventListener('click', (event) => {
     event.preventDefault();
+    openMenu();
+  });
+
+  closebtn.addEventListener('click', (event) => {
+    event.preventDefault();
+    closeMenu();
+  });
+
+  function openMenu() {
     openbtn.style.display = 'none';
     closebtn.style.display = 'block';
     sietwrap.style.display = 'block';
     all.classList.add('all');
     htmlElement.classList.add('all');
     lastMenuItem.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  });
+  }
 
-  closebtn.addEventListener('click', (event) => {
-    event.preventDefault();
+  function closeMenu() {
     closebtn.style.display = 'none';
     openbtn.style.display = 'block';
     sietwrap.style.display = 'none';
@@ -30,9 +36,10 @@ function menubtn() {
     all.classList.remove('all');
     htmlElement.classList.remove('all');
     allMenuBtn.focus();
-  });
+  }
 }
 
+// 메뉴바
 $(document).ready(function () {
   function gnb() {
     var parent = $('#gnb');
@@ -73,38 +80,80 @@ $(document).ready(function () {
   }
   gnb();
 });
-document.addEventListener('DOMContentLoaded', function() {
+
+// 공지사항
+document.addEventListener('DOMContentLoaded', function () {
   const onbtns = document.querySelectorAll('.NoticeBtn');
   const descs = document.querySelectorAll('.NoticeDesc');
 
-  // 첫 번째 버튼과 해당하는 Description에 'on' 클래스 추가
   onbtns[0].classList.add('on');
   descs[0].style.display = 'block';
 
-  onbtns.forEach(function(onbtn) {
-      onbtn.addEventListener('click', function() {
-          const tabNumber = this.getAttribute('data-tab-number');
+  onbtns.forEach(function (onbtn) {
+    onbtn.addEventListener('click', function () {
+      const tabNumber = this.getAttribute('data-tab-number');
 
-          // 모든 버튼에서 'on' 클래스 제거
-          onbtns.forEach(function(btn) {
-              btn.classList.remove('on');
-          });
-
-          // 모든 Description 영역 숨기기
-          descs.forEach(function(desc) {
-              desc.style.display = 'none';
-          });
-
-          // 선택된 버튼에 'on' 클래스 추가
-          this.classList.add('on');
-
-          // 해당하는 Description 영역 보이기
-          const selectedDesc = document.querySelector('.NoticeDesc[data-tab-number="' + tabNumber + '"]');
-          selectedDesc.style.display = 'block';
+      onbtns.forEach(function (btn) {
+        btn.classList.remove('on');
       });
+
+      descs.forEach(function (desc) {
+        desc.style.display = 'none';
+      });
+
+      this.classList.add('on');
+
+      const selectedDesc = document.querySelector('.NoticeDesc[data-tab-number="' + tabNumber + '"]');
+      selectedDesc.style.display = 'block';
+    });
   });
 });
 window.onload = function () {
-  noticeon();
   menubtn();
 };
+
+// function addRess() {
+//   $(".footer_top .select_box .select").click(function () {
+//       var bt = $(this);
+//       var adDiv = bt.next("ul");
+
+//       if (adDiv.is(":hidden")) {
+//           adDiv.slideDown();
+//           bt.addClass("on");
+//       } else {
+//           adDiv.slideUp();
+//           bt.removeClass("on");
+//       }
+//   });
+
+//   /*
+//   $(".select_box").mouseleave(function () {
+//         $(".footer_top .select_box>ul").stop().slideUp();
+//         if ($(this).find(">button").hasClass("on")) {
+//             $(this).find(">button").removeClass("on")
+//         }
+
+//     });
+//   */
+
+//   $(".select_box ul li a").click(function () {
+//       $(".footer_top .select_box>ul").stop().slideUp();
+
+//   });
+
+// }
+
+// 모바일
+
+// 모바일 검색
+document.addEventListener('DOMContentLoaded', () => {
+  const searchBtn = () => {
+    document.querySelector('.mo_search').addEventListener('click', () => {
+      document.querySelector('.search').classList.toggle('on');
+      document.querySelector('.mo_search').classList.toggle('on');
+    });
+  };
+
+  searchBtn();
+});
+

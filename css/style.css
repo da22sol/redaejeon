@@ -189,8 +189,8 @@ header:before {
 
 #header .HeaderTop .logo {
   float: left;
-  width: 16.1rem;
-  height: 1.4rem;
+  width: 240px;
+  height: 20px;
   transform: translateY(-50%);
   position: relative;
   top: 50%;
@@ -296,6 +296,19 @@ input[type='text' i] {
 #header .HeaderTop .CloseBtn i {
   color: #4db0a8;
   font-size: 30px;
+}
+
+#header .HeaderTop .mo_search {
+  display: none;
+  position: absolute;
+  top: 50%;
+  right: 56px;
+  transform: translateY(-50%);
+}
+
+#header .HeaderTop .mo_search i {
+  font-size: 26px;
+  color: #4db0a8;
 }
 
 /* 메뉴바 */
@@ -457,6 +470,13 @@ input[type='text' i] {
   display: none;
 }
 
+#header .SubWrap .mo_header {
+  display: none;
+  background: #4db0a8;
+  padding: 20px 15px;
+  position: relative;
+}
+
 #AllMenu .scroll {
   height: 100%;
 }
@@ -567,4 +587,427 @@ input[type='text' i] {
   right: 0;
   height: auto;
   border-radius: 10px;
+}
+
+/*푸터*/
+
+footer {
+  position: relative;
+}
+
+.FooterWrap .layout {
+  position: relative;
+  padding: 0px 140px;
+
+  width: 1200px;
+}
+
+.FooterBanner .layout .FooterTit {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.9rem;
+}
+
+.FooterBanner .layout .FooterSlide .swiper2 .swiper-wrapper div a {
+  text-align: center;
+  display: table;
+  table-layout: fixed;
+  text-align: center;
+  width: 100%;
+}
+
+.FooterBanner .layout .FooterSlide .swiper-container .swiper-wrapper div a span {
+  display: table-cell;
+  vertical-align: middle;
+  height: 80px;
+  padding: 0 20px;
+}
+
+.FooterBanner .layout .FooterSlide .swiper2 .swiper-wrapper div a img {
+  margin: 0 auto;
+}
+
+.hide {
+  position: fixed;
+  top: -1px;
+  left: -1px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.SlideBtn {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.swiper-button-prev::after {
+  display: none;
+}
+.swiper-button-next::after {
+  display: none;
+}
+.SlideBtn > div {
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid #000;
+  display: block;
+  float: left;
+  border-left: 0;
+  text-align: center;
+  line-height: 2rem;
+}
+.FooterBanner .layout .FooterSlide .swiper2 i {
+  font-size: 30px;
+  color: #4c4c4c;
+}
+
+.xi-angle-left-min {
+  position: absolute;
+  left: 55rem;
+  border: 1px solid #4c4c4c;
+  margin-right: 40px;
+}
+.xi-angle-right-min {
+  border: 1px solid #4c4c4c;
+}
+
+/* 푸터-링크 */
+
+.FooterLink {
+  background-color: #6e6e6e;
+  height: 68px;
+}
+
+.FooterLink .layout {
+  padding: 24px 260px 24px 0;
+  height: 20px;
+}
+
+.FooterLink .layout:after {
+  display: block;
+  overflow: hidden;
+  content: '';
+  clear: both;
+}
+.FooterLink .FLink {
+  float: left;
+}
+
+.FooterLink .FLink ul {
+  overflow: hidden;
+}
+.FooterLink .FLink ul li {
+  float: left;
+  margin-left: 0.5rem;
+}
+.FooterLink .FLink ul li a {
+  display: block;
+  padding-left: 12px;
+  position: relative;
+  color: #fff;
+  font-weight: 300;
+  font-size: 16px;
+}
+.FooterLink .FLink ul li a:hover {
+  text-decoration: underline;
+}
+.FooterLink .FLink ul li:first-of-type {
+  margin-left: 0;
+}
+.FooterLink .FLink ul li:first-of-type a {
+  padding-left: 0;
+  color: #ec963c;
+}
+.FooterLink .FLink ul li a:before {
+  content: '/';
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  color: #8d8d8d;
+}
+.FooterLink .FLink ul li:first-of-type a:before {
+  display: none;
+}
+
+/* 셀렉트 */
+.FooterLink .SelectLink {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.FooterLink .SelectLink:first-of-type {
+  border-right: 1px solid #666;
+}
+.FooterLink .SelectLink > button {
+  padding-right: 2.25rem;
+  display: block;
+  position: relative;
+  height: 3.4rem;
+  line-height: 3.4rem;
+  width: 11.5rem;
+  text-align: left;
+  padding-left: 1rem;
+  color: #fff;
+  font-size: 0.8rem;
+  border-left: 1px solid #8b8b8b;
+  border-right: 1px solid #8b8b8b;
+  font-weight: 300;
+}
+.FooterLink .SelectLink > button:before {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 20px;
+  content: '';
+  font-family: 'xeicon';
+  color: #fff;
+  transition: all 0.2s;
+}
+.FooterLink .SelectLink > button.on:before {
+  transition: all 0.2s;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.FooterLink .SelectLink ul {
+  display: none;
+}
+.FooterLink .SelectLink ul li a {
+  display: block;
+  color: #fff;
+  font-weight: 300;
+  background: #4c4c4c;
+  position: relative;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  width: 100%;
+  text-align: left;
+  padding: 0 1rem;
+  border-top: 1px solid #676767;
+}
+.FooterLink .SelectLink ul li a:hover {
+  background: #313131;
+  color: #fff;
+}
+.FooterLink .SelectLink ul li:first-of-type a {
+  border-top: 0;
+}
+.FooterLink .SelectLink ul {
+  position: absolute;
+  bottom: 3.4rem;
+  border: 1px solid #676767;
+  overflow: hidden;
+  width: 11.5rem;
+  z-index: 100;
+}
+
+/* sns링크 */
+.FooterLink .SnsLink {
+  float: right;
+  margin-top: -4px;
+  overflow: hidden;
+}
+.FooterLink .SnsLink ul li {
+  float: left;
+  margin-left: 25px;
+}
+.FooterLink .SnsLink ul li a {
+  display: block;
+  font-weight: 300;
+}
+.FooterLink .SnsLink ul li a:hover span {
+  text-decoration: underline;
+}
+.FooterLink .SnsLink ul li a span {
+  color: #fff;
+  vertical-align: middle;
+  display: inline-block;
+}
+.FooterLink .SnsLink ul li:first-of-type {
+  margin-left: 0;
+}
+
+.FooterLink .SnsLink ul li a:before {
+  display: inline-block;
+  content: '';
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+.FooterLink .SnsLink ul li a.youtube:before {
+  width: 26px;
+  height: 26px;
+  background: url(../imgs/sns_03.png) no-repeat center center / cover;
+}
+
+.FooterLink .SnsLink ul li a.facebook:before {
+  width: 26px;
+  height: 26px;
+  background: url(../imgs/sns_01.png) no-repeat center center / cover;
+}
+
+.address {
+  padding: 25px 0;
+  position: relative;
+}
+
+.address .AdressLogo {
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+.address .AdressLogo .logo {
+  float: left;
+}
+
+.address .AdressLogo .logo a {
+  display: block;
+  width: 278px;
+}
+
+.address .AdressLogo .logo2 {
+  float: right;
+  overflow: hidden;
+}
+
+.address .AdressLogo .logo2 a {
+  display: block;
+  float: left;
+  margin-left: 25px;
+}
+
+.address .AdressLogo .logo2 a:first-of-type {
+  margin-left: 0;
+  width: 148px;
+}
+.address .AdressLogo .logo2 a:first-of-type + a {
+  width: 110px;
+}
+.address .AdressLogo address p {
+  font-size: 12px;
+  color: #545454;
+}
+
+/* 모바일 */
+
+@media (max-width: 1280px) {
+  .HeaderLayout {
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 767px) {
+  #header {
+    position: fixed;
+    width: 100%;
+    z-index: 43;
+    left: 0;
+    top: 0;
+    border-bottom: 1px solid #ddd;
+  }
+  #header.scroll:before {
+    opacity: 0.9;
+  }
+
+  #header .HeaderTop .login {
+    display: none;
+  }
+
+  #header .HeaderTop .search {
+    display: none;
+  }
+  #header.all .HeaderTop .search {
+    display: none;
+  }
+  .HeaderBar {
+    display: none;
+  }
+
+  #header .HeaderTop .search.on {
+    display: block;
+    left: 0;
+    top: 110px;
+    width: 100%;
+    padding: 1rem;
+    background: #fff;
+    border-top: 1px solid #ddd;
+    z-index: 4;
+  }
+
+  #header.HeaderTop .mo_search {
+    display: block;
+  }
+  #header .HeaderTop .mo_search .xi-search {
+    display: block;
+  }
+  #header .HeaderTop .mo_search.on .xi-search {
+    display: none;
+  }
+  #header .HeaderTop .mo_search .xi-close {
+    display: none;
+  }
+  #header .HeaderTop .mo_search.on .xi-close {
+    display: block;
+  }
+
+  #header {
+    position: fixed;
+    width: 100%;
+    z-index: 3;
+    left: 0;
+    top: 0;
+    border-bottom: 1px solid #ddd;
+  }
+  #header.scroll:before {
+    opacity: 0.9;
+  }
+
+  #header.SubWrap {
+    top: 0;
+  }
+  #header.all .HeaderTop {
+    display: none;
+  }
+  #header.all .SubWrap {
+    height: 100vh;
+    padding: 0;
+  }
+  #header.all .SubWrap:after {
+    display: none;
+  }
+
+  #header .SubWrap .HeaderLayout {
+    padding: 0;
+  }
+
+  #header .SubWrap .mo_header {
+    display: block;
+  }
+
+  #header .SubWrap h2 {
+    width: 100%;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+  }
+  .SubWrap .close {
+    position: absolute;
+    top: 1.05rem;
+    right: 1rem;
+    font-size: 1.6rem;
+    color: #fff;
+  }
+  .SubWrap .scroll {
+    width: 100%;
+    overflow-y: auto;
+    height: calc(100% - 72px);
+    max-width: 100%;
+  }
+}
+@media (max-width: 420px) {
 }
