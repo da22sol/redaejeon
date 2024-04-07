@@ -40,6 +40,9 @@
     <!-- css -->
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/css/font/dingbat_xeicon.css">
+
+
 
     <!-- js -->
     <script src="./js/js.js"></script>
@@ -245,7 +248,7 @@
             </div>
             <div class="scroll">
               <ul id="AllMenu" class="AllMenu2">
-                <li class="lnb1">
+                <li class="lnb1 plus sub">
                   <a href="#">소속시설</a>
                   <div class="SubMenu">
                     <ul class="sub09 DepthMenu2">
@@ -257,19 +260,19 @@
 
                         <div>
                           <ul class="DepthDetail">
-                            <li class="DepthTxt"><a href="#"></a>소개</li>
+                            <li class="DepthTxt"><a href="#">소개</a></li>
                           </ul>
                         </div>
 
                         <div>
                           <ul class="DepthDetail">
-                            <li class="DepthTxt"><a href="#"></a>사업내용</li>
+                            <li class="DepthTxt"><a href="#">사업내용</a></li>
                           </ul>
                         </div>
 
                         <div>
                           <ul class="DepthDetail">
-                            <li class="DepthTxt"><a href="#"></a>시설현황</li>
+                            <li class="DepthTxt"><a href="#">시설현황</a></li>
                           </ul>
                         </div>
                       </li>
@@ -373,7 +376,7 @@
                   </div>
                 </li>
 
-                <li class="lnb2">
+                <li class="lnb2 plus sub">
                   <a href="#">사업소개</a>
 
                   <div class="SubMenu">
@@ -406,7 +409,7 @@
                   </div>
                 </li>
 
-                <li class="lnb3">
+                <li class="lnb3 plus sub">
                   <a href="#">복지자료</a>
                   <div class="SubMenu">
                     <ul class="sub10 DepthMenu2">
@@ -438,7 +441,7 @@
                   </div>
                 </li>
 
-                <li class="lnb4">
+                <li class="lnb4 plus sub">
                   <a href="">참여마당</a>
                   <div class="SubMenu">
                     <ul class="sub01 DepthMenu">
@@ -508,7 +511,7 @@
                     </ul>
                   </div>
                 </li>
-                <li class="lnb5">
+                <li class="lnb5 plus sub">
                   <a href="">알림마당</a>
                   <div class="SubMenu">
                     <ul class="sub01 DepthMenu">
@@ -536,7 +539,7 @@
                     </ul>
                   </div>
                 </li>
-                <li class="lnb6">
+                <li class="lnb6 plus sub">
                   <a href="">재단소개</a>
                   <div class="SubMenu">
                     <ul class="sub04 DepthMenu">
@@ -585,7 +588,7 @@
                     </ul>
                   </div>
                 </li>
-                <li class="lnb7 mnlas">
+                <li class="lnb7 mnlas plus sub">
                   <a href="#">열린경영</a>
                   <div class="SubMenu">
                     <ul class="sub05 DepthMenu">
@@ -874,7 +877,7 @@
               </div>
               <div class="alin">
                 <div class="gallery">
-                  <div class="GalleryBox">
+                  <div class="GalleryBox scroll2">
                     <ul>
                       <li class="SortImg">
                         <a href="#">
@@ -943,7 +946,7 @@
                     <div class="swiper-wrapper">
                       <div class="swiper-slide" id="FooterSlide_01">
                         <a href="#" title="보건복지부">
-                          <span><img src="imgs/new_bn_img01.jpg" alt="보건복지부" /></span
+                          <span><img src="imgs/new_bn_img01.jpg" alt="보건복지부" /> </span
                         ></a>
                       </div>
                       <div class="swiper-slide" id="FooterSlide_02">
@@ -1123,28 +1126,60 @@
         },
         speed: 500,
         slidesPerView: 2,
+        spaceBetween: 10,
         pagination: {
           el: '.swiper-pagination',
           type: 'bullets',
         },
         centeredSlides: false,
+        breakpoints: {
+          767: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          1024: {
+            slidesPerView: 2,
+            spaceBetween: 10,
+          },
+        },
       });
 
-      const mySwiper2 = new Swiper('.swiper2', {
-        direction: 'horizontal',
-        loop: true,
-        autoplay: {
-          delay: 3000,
-        },
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
+      let mySwiper2;
 
-        speed: 500,
-        slidesPerView: 5,
-        centeredSlides: false,
-      });
+      function handleResize() {
+        if (mySwiper2) {
+          mySwiper2.destroy(true, true);
+        }
+
+        mySwiper2 = new Swiper('.swiper2', {
+          direction: 'horizontal',
+          loop: true,
+          autoplay: {
+            delay: 3000,
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+          breakpoints: {
+            1000: {
+              slidesPerView: 5,
+            },
+            767: {
+              slidesPerView: 4,
+            },
+            420: {
+              slidesPerView: 2,
+            },
+          },
+          speed: 500,
+          centeredSlides: false,
+        });
+      }
+
+      window.addEventListener('resize', handleResize);
+
+      handleResize();
     </script>
   </body>
 </html>

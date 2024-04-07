@@ -3,6 +3,7 @@
 @charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
 @import url('./main.css');
+@import url('/css/font/dingbat_xeicon.css');
 
 *,
 *::before,
@@ -149,7 +150,9 @@ table {
   border-collapse: separate;
   border-spacing: 0;
 }
-
+html.all {
+  overflow: hidden;
+}
 /* 헤더 */
 #wrap {
   width: 100%;
@@ -178,7 +181,7 @@ header:before {
 }
 
 #header .HeaderTop {
-  height: 3.75rem;
+  height: 56px;
 }
 
 #header .HeaderTop:after {
@@ -328,7 +331,9 @@ input[type='text' i] {
   background: url(../imgs/subM_Bg.png) no-repeat center center / cover;
   z-index: 0;
 }
-
+#header.all:after {
+  display: none;
+}
 .all .HeaderBar #gnb {
   display: none;
 }
@@ -449,7 +454,6 @@ input[type='text' i] {
   top: 6.75rem;
   left: 0;
   width: 100%;
-  z-index: 15;
 }
 
 #header .all .HeaderBar {
@@ -469,7 +473,9 @@ input[type='text' i] {
   z-index: 100;
   display: none;
 }
-
+#header .SubWrap {
+  height: 100vh;
+}
 #header .SubWrap .mo_header {
   display: none;
   background: #4db0a8;
@@ -562,7 +568,7 @@ input[type='text' i] {
 .scroll {
   width: 100%;
   overflow-y: auto;
-  height: calc(100% - 72px);
+  height: 100%;
   max-width: 100%;
 }
 .scroll::-webkit-scrollbar {
@@ -595,14 +601,13 @@ footer {
   position: relative;
 }
 
-.FooterWrap .layout {
+#footer .FooterWrap .FooterBanner .layout {
   position: relative;
-  padding: 0px 140px;
-
-  width: 1200px;
+  padding-left: 7rem;
+  padding-right: 7rem;
 }
 
-.FooterBanner .layout .FooterTit {
+#footer .FooterWrap .FooterBanner .layout .FooterTit {
   position: absolute;
   left: 0;
   top: 50%;
@@ -610,7 +615,7 @@ footer {
   font-size: 0.9rem;
 }
 
-.FooterBanner .layout .FooterSlide .swiper2 .swiper-wrapper div a {
+#footer .FooterWrap .FooterBanner .layout .FooterSlide .swiper2 .swiper-wrapper div a {
   text-align: center;
   display: table;
   table-layout: fixed;
@@ -618,15 +623,22 @@ footer {
   width: 100%;
 }
 
-.FooterBanner .layout .FooterSlide .swiper-container .swiper-wrapper div a span {
+#footer .FooterWrap .FooterBanner .layout .FooterSlide .swiper-container .swiper-wrapper div a span {
   display: table-cell;
   vertical-align: middle;
-  height: 80px;
-  padding: 0 20px;
+  height: 4rem;
+  padding: 0 1rem;
 }
 
-.FooterBanner .layout .FooterSlide .swiper2 .swiper-wrapper div a img {
-  margin: 0 auto;
+#footer .FooterWrap .FooterBanner .layout .FooterSlide .swiper2 .swiper-wrapper div a img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+#footer .FooterWrap .FooterBanner .layout .FooterSlide .swiper2 i {
+  font-size: 30px;
+  color: #4c4c4c;
 }
 
 .hide {
@@ -637,14 +649,16 @@ footer {
   height: 1px;
   overflow: hidden;
 }
-
-.SlideBtn {
+#footer .FooterWrap .FooterBanner .layout .SlidBtn {
   position: absolute;
-  right: 0;
+  right: 80px;
   top: 50%;
   transform: translateY(-50%);
 }
-
+div .swiper-button-next,
+div .swiper-button-prev {
+  color: #000;
+}
 .swiper-button-prev::after {
   display: none;
 }
@@ -652,8 +666,8 @@ footer {
   display: none;
 }
 .SlideBtn > div {
-  width: 2rem;
-  height: 2rem;
+  width: 1rem;
+  height: 1rem;
   border: 1px solid #000;
   display: block;
   float: left;
@@ -661,16 +675,11 @@ footer {
   text-align: center;
   line-height: 2rem;
 }
-.FooterBanner .layout .FooterSlide .swiper2 i {
-  font-size: 30px;
-  color: #4c4c4c;
-}
 
 .xi-angle-left-min {
   position: absolute;
-  left: 55rem;
   border: 1px solid #4c4c4c;
-  margin-right: 40px;
+  margin-right: 170px;
 }
 .xi-angle-right-min {
   border: 1px solid #4c4c4c;
@@ -680,12 +689,10 @@ footer {
 
 .FooterLink {
   background-color: #6e6e6e;
-  height: 68px;
 }
 
-.FooterLink .layout {
-  padding: 24px 260px 24px 0;
-  height: 20px;
+#footer .FooterLink .layout {
+  padding: 1.25rem 15rem 1.25rem 1rem;
 }
 
 .FooterLink .layout:after {
@@ -694,7 +701,7 @@ footer {
   content: '';
   clear: both;
 }
-.FooterLink .FLink {
+#footer .FooterLink .FLink {
   float: left;
 }
 
@@ -737,15 +744,15 @@ footer {
 }
 
 /* 셀렉트 */
-.FooterLink .SelectLink {
+#footer .FooterLink .SelectLink {
   position: absolute;
   top: 0;
   right: 0;
 }
-.FooterLink .SelectLink:first-of-type {
+#footer .FooterLink .SelectLink:first-of-type {
   border-right: 1px solid #666;
 }
-.FooterLink .SelectLink > button {
+#footer .FooterLink .SelectLink > button {
   padding-right: 2.25rem;
   display: block;
   position: relative;
@@ -760,7 +767,7 @@ footer {
   border-right: 1px solid #8b8b8b;
   font-weight: 300;
 }
-.FooterLink .SelectLink > button:before {
+#footer .FooterLink .SelectLink > button:before {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -770,15 +777,15 @@ footer {
   color: #fff;
   transition: all 0.2s;
 }
-.FooterLink .SelectLink > button.on:before {
+#footer .FooterLink .SelectLink > button.on:before {
   transition: all 0.2s;
   transform: translateY(-50%) rotate(45deg);
 }
 
-.FooterLink .SelectLink ul {
+#footer .FooterLink .SelectLink ul {
   display: none;
 }
-.FooterLink .SelectLink ul li a {
+#footer .FooterLink .SelectLink ul li a {
   display: block;
   color: #fff;
   font-weight: 300;
@@ -795,10 +802,10 @@ footer {
   background: #313131;
   color: #fff;
 }
-.FooterLink .SelectLink ul li:first-of-type a {
+#footer .FooterLink .SelectLink ul li:first-of-type a {
   border-top: 0;
 }
-.FooterLink .SelectLink ul {
+#footer .FooterLink .SelectLink ul {
   position: absolute;
   bottom: 3.4rem;
   border: 1px solid #676767;
@@ -899,6 +906,25 @@ footer {
   .HeaderLayout {
     padding: 0 15px;
   }
+
+  #footer .FooterWrap .FooterBanner .layout {
+    padding-left: 8rem;
+    padding-right: 8rem;
+  }
+
+  #footer .FooterWrap .FooterBanner .layout .FooterTit {
+    left: 1rem;
+  }
+
+  /* .FooterBanner .layout .FooterSlide {
+    overflow: hidden;
+  } */
+}
+
+@media (max-width: 1000px) {
+  #footer .FooterLink .layout {
+    padding: 1.25rem 14rem 1.25rem 1rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -927,7 +953,9 @@ footer {
   .HeaderBar {
     display: none;
   }
-
+  #header .HeaderTop .SiteMapBtn i {
+    font-size: 24px;
+  }
   #header .HeaderTop .search.on {
     display: block;
     left: 0;
@@ -938,10 +966,14 @@ footer {
     border-top: 1px solid #ddd;
     z-index: 4;
   }
-
-  #header.HeaderTop .mo_search {
+  #header .HeaderTop .mo_search {
     display: block;
   }
+
+  #header .HeaderTop .mo_search i {
+    font-size: 24px;
+  }
+
   #header .HeaderTop .mo_search .xi-search {
     display: block;
   }
@@ -958,7 +990,7 @@ footer {
   #header {
     position: fixed;
     width: 100%;
-    z-index: 3;
+
     left: 0;
     top: 0;
     border-bottom: 1px solid #ddd;
@@ -989,6 +1021,24 @@ footer {
     display: block;
   }
 
+  #header .SubWrap .mlogin {
+    position: absolute;
+    top: 50%;
+    right: 80px;
+    transform: translateY(-50%);
+  }
+
+  #header .SubWrap .mlogin p {
+    color: #fff;
+    width: auto;
+    padding: 3px 6px;
+    display: block;
+    border: 1px solid #fff;
+    float: left;
+    text-align: center;
+    margin-left: 8px;
+    font-size: 12px;
+  }
   #header .SubWrap h2 {
     width: 100%;
     color: #fff;
@@ -997,10 +1047,10 @@ footer {
   }
   .SubWrap .close {
     position: absolute;
-    top: 1.05rem;
-    right: 1rem;
-    font-size: 1.6rem;
+    top: 13px;
+    right: 15px;
     color: #fff;
+    font-size: 24px;
   }
   .SubWrap .scroll {
     width: 100%;
@@ -1008,6 +1058,199 @@ footer {
     height: calc(100% - 72px);
     max-width: 100%;
   }
+  #AllMenu > li + li {
+    margin-top: 0;
+  }
+  #AllMenu .SubMenu > [class^='sub'] > li {
+    min-height: inherit !important;
+    float: none;
+    width: 100%;
+    padding-right: 0;
+  }
+  #AllMenu > li > a {
+    margin-bottom: 0;
+    padding: 15px;
+    font-size: 15px;
+  }
+  #AllMenu > li > a::after {
+    background: none;
+    /* font-family: 'xeicone';
+    content: '\e942'; */
+    left: inherit;
+    bottom: inherit;
+    right: 15px;
+    width: auto;
+  }
+
+  #AllMenu .SubMenu {
+    padding: 0 1rem;
+    background: #fafbfc;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    transition: padding 0.4s;
+  }
+
+  #AllMenu .SubMenu > [class^='sub'] > li > a {
+    padding: 12px 15px;
+    margin-bottom: 0;
+    border-bottom: 1px solid #e8ebee;
+    font-size: 12px;
+    position: relative;
+  }
+  #AllMenu .SubMenu > [class^='sub'] > li > a:before {
+    position: absolute;
+    left: 0.3rem;
+    top: 50%;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    content: '';
+    background: #555;
+    transform: translateY(-50%);
+  }
+
+  #AllMenu .SubMenu > [class^='sub'] div {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #e8ebee;
+    margin-bottom: 0;
+  }
+
+  #AllMenu li.plus.active > div {
+    padding: 0.5rem 1rem;
+    height: auto;
+    overflow: visible;
+    visibility: visible;
+    border-bottom: 1px solid #ddd;
+  }
+  #AllMenu .DepthTxt a {
+    padding: 3px 20px;
+    position: relative;
+    font-size: 12px;
+  }
+  #AllMenu .DepthTxt a:before {
+    content: '';
+    display: block;
+    width: 3px;
+    height: 1px;
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    background: #666;
+  }
+
+  #footer .FooterWrap .FooterBanner .layout .FooterSlide .swiper-container .swiper-wrapper div a span {
+    padding: 5px;
+  }
+
+  #footer .FooterWrap .FooterBanner .layout .FooterSlide .swiper2 .swiper-wrapper div a img {
+    margin: 0 auto;
+  }
+
+  #footer .FooterWrap .FooterBanner .layout .SlidBtn {
+    right: 15px;
+  }
+
+  /* .xi-angle-left-min {
+  left: 34rem;
+} */
+  #footer .FooterLink .layout {
+    height: auto;
+  }
+  #footer .FooterLink .SelectLink > button {
+    border-bottom: 1px solid #8b8b8b;
+    border-top: 1px solid #8b8b8b;
+  }
+
+  #footer .FooterLink .SelectLink {
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  #footer .FooterLink .FLink {
+    float: none;
+    margin-bottom: 1rem;
+  }
+
+  #footer .FooterLink .FLink ul li a {
+    font-size: 12px;
+  }
+
+  #footer .FooterLink .SnsLink {
+    float: none;
+  }
 }
-@media (max-width: 420px) {
+@media (max-width: 430px) {
+  #footer .FooterWrap .FooterBanner .layout .FooterTit {
+    font-size: 14px;
+  }
+  #footer .FooterWrap .FooterBanner .layout .FooterSlide .swiper-container .swiper-wrapper div a span {
+    padding: 0;
+  }
+  #footer .FooterWrap .FooterBanner .layout {
+    padding-left: 130px;
+    padding-right: 130px;
+  }
+
+  #footer .FooterLink .SelectLink {
+    position: relative;
+    top: auto;
+    right: auto;
+    margin-bottom: 1rem;
+    transform: none;
+  }
+
+  #footer .FooterLink .SelectLink > button {
+    width: 100%;
+  }
+
+  #footer .FooterLink .layout {
+    padding: 1.25rem 1rem 1.25rem 1rem;
+  }
+
+  .FooterLink .FLink ul li {
+    margin-left: 0;
+  }
+
+  .address .AdressLogo {
+    margin-bottom: 5px;
+  }
+
+  .address .AdressLogo .logo {
+    float: none;
+    margin-bottom: 1rem;
+  }
+
+  .address .AdressLogo .logo a {
+    margin: 0 auto;
+    width: 200px;
+  }
+
+  .address .AdressLogo .logo2 {
+    text-align: center;
+    float: none;
+  }
+
+  .address .AdressLogo .logo2 a {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+  }
+
+  .address .AdressLogo .logo2 a:first-of-type {
+    margin-left: 0;
+
+    width: 100px;
+  }
+
+  address {
+    text-align: center;
+    font-size: 12px;
+  }
+
+  address span {
+    display: block;
+  }
 }
