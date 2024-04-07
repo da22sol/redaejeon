@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap');
 /* 메인 section1 */
 
-.Sectionlayout {
+.section01 .SectionLayout {
   position: relative;
   max-width: 1400px;
   width: 100%;
@@ -11,10 +11,8 @@
 
 .layout {
   position: relative;
-
   width: 100%;
   margin: 0 auto;
-  padding: 0 60px;
 }
 
 #main {
@@ -43,13 +41,12 @@
   content: '';
   display: block;
   background: #e7f2e4;
-  /* background: url(/imgs/main_vis.png) no-repeat center/cover; */
+
   filter: blur(5px);
 }
 
 .ContentWrap {
   display: flex;
-
   justify-content: center;
   align-content: center;
   flex-wrap: wrap;
@@ -57,8 +54,6 @@
 
 .alin {
   display: flex;
-  flex-wrap: wrap;
-  align-content: center;
   justify-content: center;
   align-items: center;
 }
@@ -74,12 +69,10 @@
 }
 
 .swiper-container {
-  /* width: 80%;
-  height: 100%; */
   overflow: hidden;
 }
 
-.swiper1 {
+.slide .swiper1 {
   text-align: center;
   display: inline-flex;
   justify-content: center;
@@ -87,11 +80,11 @@
   padding-right: 4px;
 }
 
-.swiper1 img {
+.slide .swiper1 img {
   display: block;
   text-align: center;
   margin: 0 auto;
-  /* border-radius: 30px; */
+
   width: 330px;
   height: 420px;
 }
@@ -257,6 +250,8 @@
   display: flex;
   flex-wrap: wrap;
   /* padding-top: 50px; */
+  align-content: center;
+  justify-content: center;
 }
 
 .apply .ApplyIcon > li {
@@ -439,25 +434,15 @@
   margin: 0 auto;
 }
 
-.TitleTxt p {
+.title p {
   letter-spacing: 1.2px;
   margin-top: 16px;
 }
 
-.gallery {
+.alin .gallery .scroll2 {
   float: left;
   width: 800px;
 }
-
-/* .GalleryTitle {
-  text-align: left;
-  margin-bottom: 20px;
-  color: #333;
-  font-size: 28px;
-  position: relative;
-  line-height: 4rem;
-  width: 100px;
-} */
 
 .GalleryTitle:after {
   content: '';
@@ -542,15 +527,6 @@
   width: calc(100% -820px);
 }
 
-/* .SiteTitle {
-  text-align: left;
-  margin-bottom: 20px;
-  color: #333;
-  font-size: 28px;
-  position: relative;
-  line-height: 4rem;
-} */
-
 .SiteTitle:after {
   content: '';
   position: absolute;
@@ -573,15 +549,10 @@
   border-bottom: 1px solid #ffffff;
   text-align: left;
 }
-/* 
-.SiteLink a span i {
-  content: '\eb14';
-  position: absolute;
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
-  font-size: 40px;
-} */
+
+.SiteLink a:last-child {
+  border: none;
+}
 
 .SiteLink span {
   padding-left: 70px;
@@ -593,4 +564,275 @@
   top: 50%;
   transform: translateY(-50%);
   font-size: 40px;
+}
+
+/* 반응형 */
+
+@media (max-width: 1280px) {
+}
+
+@media (max-width: 1024px) {
+  .NoticeBtn {
+    margin-left: 1.4rem;
+  }
+
+  .notice .NoticeBtn:not(:first-of-type):before {
+    left: -1rem;
+  }
+  .apply .ApplyIcon p {
+    letter-spacing: -0.8px;
+  }
+  .GalleryBox .SortImg:last-child {
+    margin-right: 0;
+  }
+
+  .GalleryBox .SortImg {
+    width: 31.5%;
+    margin-right: 2.5%;
+  }
+
+  .alin {
+    display: block;
+    margin-top: 32px;
+  }
+
+  .alin .gallery .scroll2 {
+    width: 100%;
+  }
+
+  .GalleryBox .SortImg a {
+    display: block;
+    position: relative;
+    border-radius: 0 0 0 0;
+    background: white;
+    white-space: normal;
+    border: 2px solid #ddd;
+    height: 100%;
+    width: 100%;
+  }
+  .SiteLink {
+    margin-top: 30px;
+    width: 100%;
+    padding-top: 50px;
+  }
+  .SiteLink span {
+    padding-left: 70px;
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 820px) {
+  .NoticeBtn {
+    margin-left: 0.6rem;
+  }
+
+  .notice .NoticeBtn:not(:first-of-type):before {
+    left: -0.4rem;
+    height: 1rem;
+  }
+
+.apply .ApplyIcon p {
+  font-size: 12px;
+  line-height: 2;
+}
+
+.slide {
+  width: 100%;
+  padding: 0 12px;
+}
+
+.slide .swiper1 img {
+  height: 100%;
+  width: 100%;
+}
+
+.right {
+  display: inline-block;
+  width: 100%;
+  margin-left: 0;
+  padding: 0 12px;
+  margin-top: 30px;
+}
+
+.apply .ApplyIcon > li {
+  padding: 4px 10px;
+  width: 22%;
+}
+
+.GalleryBox .SortImg:last-child {
+  margin-right: 0;
+}
+
+.alin {
+  display: block;
+
+  margin-left: 60px;
+}
+
+.alin .gallery .scroll2 {
+  width: 100%;
+}
+
+.GalleryBox .SortImg a {
+  display: block;
+  position: relative;
+  border-radius: 0 0 0 0;
+  background: white;
+  white-space: normal;
+  border: 2px solid #ddd;
+  height: 100%;
+  width: 100%;
+}
+.SiteLink {
+  margin-top: 30px;
+  width: 100%;
+  padding-top: 50px;
+}
+}
+@media (max-width: 768px) {
+  #main {
+    padding-top: 58px;
+  }
+  .layout {
+    padding: 0 16px;
+  }
+  .ContentWrap {
+    display: block;
+  }
+  .slide {
+    width: 100%;
+    padding: 0 12px;
+  }
+  .swiper1 img {
+    height: 100%;
+    width: 100%;
+  }
+  
+
+  .apply .ApplyIcon > li {
+    padding: 4px 10px;
+    width: 22%;
+  }
+
+  .gallery {
+    width: 100%;
+  }
+
+  .TitleTxt {
+    font-size: 24px;
+  }
+
+  .GalleryBox .SortImg:last-child {
+    margin-right: 0;
+  }
+
+  .alin {
+    display: block;
+  }
+
+  .GalleryBox ul {
+    min-width: 767px;
+  }
+
+  .GalleryBox .SortImg {
+    width: 30%;
+    margin-right: 2%;
+  }
+
+  .GalleryBottom {
+    padding: 14px;
+  }
+
+  .GalleryBottom p {
+    text-align: center;
+    padding: 10px;
+    font-size: 13px;
+  }
+  .GalleryBottom span {
+    font-size: 10px;
+    text-align: center;
+    padding-top: 10px;
+  }
+
+  .alin .gallery .scroll2 {
+    width: 100%;
+    overflow-y: auto;
+    height: 10%;
+    max-width: 100%;
+  }
+  .scroll2::-webkit-scrollbar {
+    width: 2px;
+    height: 4px;
+  }
+  .scroll2::-webkit-scrollbar-track {
+    background-color: #d2d2d2;
+    position: absolute;
+    display: block;
+  }
+
+  .scroll2::-webkit-scrollbar-thumb {
+    background-color: #4db0a8;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: auto;
+    border-radius: 2px;
+  }
+
+  .SiteLink {
+    width: 100%;
+    height: 100%;
+    padding: 16px;
+    margin-left: 0;
+    margin-top: 32px;
+  }
+
+  .SiteLink a {
+    padding: 16px 0;
+  }
+  .SiteLink span {
+    padding-left: 80px;
+  }
+}
+
+@media (max-width: 430px) {
+  .apply .ApplyIcon p {
+    letter-spacing: -3px;
+    line-height: 1;
+  }
+  .apply .ApplyIcon p:nth-child(6) {
+    letter-spacing: -2px;
+  }
+  .NoticeBtn {
+    margin-left: 0.4rem;
+  }
+
+  .notice .NoticeBtn:not(:first-of-type):before {
+    left: -0.3rem;
+    height: 1rem;
+  }
+  .notice .NoticeDesc > ul > li > a {
+    font-size: 12px;
+    font-weight: 500;
+  }
+  .notice .NoticeDesc > ul > li > a [data-post-type='subject'] {
+    font-size: 12px;
+  }
+
+  .title p {
+    font-size: 12px;
+    text-align: center;
+    letter-spacing: 0;
+    margin-top: 0;
+  }
+
+  .SiteLink span {
+    padding-left: 50px;
+    font-size: 16px;
+  }
+  .alin {
+    margin-left: 0;
+  }
 }
