@@ -968,6 +968,7 @@ div .swiper-button-prev {
   }
   #header .HeaderTop .mo_search {
     display: block;
+      right: 36px;
   }
 
   #header .HeaderTop .mo_search i {
