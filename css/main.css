@@ -350,56 +350,55 @@
   opacity: 1;
 }
 .apply .ApplyIcon li > a > span .icon[data-quick-icon='01']:before {
-   background-image: url(../../imgs/image-icon-quick01.svg);
+  background-image: url(../imgs/image-icon-quick01.svg);
 }
-
 .apply .ApplyIcon li > a > span .icon[data-quick-icon='01']:after {
-  background-image: url(/imgs/image-icon-quick01-hover.svg);
+  background-image: url(../imgs/image-icon-quick01-hover.svg);
 }
 
 .apply .ApplyIcon li > a > span .icon[data-quick-icon='02']:before {
-  background-image: url(/imgs/image-icon-quick02.svg);
+  background-image: url(../imgs/image-icon-quick02.svg);
 }
 .apply .ApplyIcon li > a > span .icon[data-quick-icon='02']:after {
-  background-image: url(/imgs/image-icon-quick02-hover.svg);
+  background-image: url(../imgs/image-icon-quick02-hover.svg);
 }
 
 .apply .ApplyIcon li > a > span .icon[data-quick-icon='03']:before {
-  background-image: url(/imgs/image-icon-quick05.svg);
+  background-image: url(../imgs/image-icon-quick05.svg);
 }
 .apply .ApplyIcon li > a > span .icon[data-quick-icon='03']:after {
-  background-image: url(/imgs/image-icon-quick05-hover.svg);
+  background-image: url(../imgs/image-icon-quick05-hover.svg);
 }
 
 .apply .ApplyIcon li > a > span .icon[data-quick-icon='04']:before {
-  background-image: url(/imgs/image-icon-quick04.svg);
+  background-image: url(../imgs/image-icon-quick04.svg);
 }
 .apply .ApplyIcon li > a > span .icon[data-quick-icon='04']:after {
-  background-image: url(/imgs/image-icon-quick04-hover.svg);
+  background-image: url(../imgs/image-icon-quick04-hover.svg);
 }
 .apply .ApplyIcon li > a > span .icon[data-quick-icon='05']:before {
-  background-image: url(/imgs/image-icon-quick09.svg);
+  background-image: url(../imgs/image-icon-quick09.svg);
 }
 .apply .ApplyIcon li > a > span .icon[data-quick-icon='05']:after {
-  background-image: url(/imgs/image-icon-quick09-hover.svg);
+  background-image: url(../imgs/image-icon-quick09-hover.svg);
 }
 .apply .ApplyIcon li > a > span .icon[data-quick-icon='06']:before {
-  background-image: url(/imgs/image-icon-quick08.svg);
+  background-image: url(../imgs/image-icon-quick08.svg);
 }
 .apply .ApplyIcon li > a > span .icon[data-quick-icon='06']:after {
-  background-image: url(/imgs/image-icon-quick08-hover.svg);
+  background-image: url(../imgs/image-icon-quick08-hover.svg);
 }
 .apply .ApplyIcon li > a > span .icon[data-quick-icon='07']:before {
-  background-image: url(/imgs/image-icon-quick07.svg);
+  background-image: url(../imgs/image-icon-quick07.svg);
 }
 .apply .ApplyIcon li > a > span .icon[data-quick-icon='07']:after {
-  background-image: url(/imgs/image-icon-quick07-hover.svg);
+  background-image: url(../imgs/image-icon-quick07-hover.svg);
 }
 .apply .ApplyIcon li > a > span .icon[data-quick-icon='08']:before {
-  background-image: url(/imgs/image-icon-quick07.svg);
+  background-image: url(../imgs/image-icon-quick07.svg);
 }
 .apply .ApplyIcon li > a > span .icon[data-quick-icon='08']:after {
-  background-image: url(/imgs/image-icon-quick07-hover.svg);
+  background-image: url(../imgs/image-icon-quick07-hover.svg);
 }
 .apply .ApplyIcon p {
   font-weight: 300;
