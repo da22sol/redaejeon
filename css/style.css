@@ -449,12 +449,13 @@ input[type='text' i] {
 }
 
 .subM_Bg {
-  background: url(../imgs/subM_Bg.png) no-repeat center center / cover;
+  background: url(./../imgs/subM_Bg.png) no-repeat center center / cover;
   position: absolute;
-  top: 6.75rem;
   left: 0;
   width: 100%;
-}
+  z-index: 14;
+} 
+
 
 #header .all .HeaderBar {
   display: none;
