@@ -43,7 +43,7 @@ function menubtn() {
     document.documentElement.classList.remove('all');
     all.classList.remove('all');
     htmlElement.classList.remove('all');
-    allMenuBtn.focus();
+    openbtn.focus();
   }
 }
 

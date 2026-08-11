@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-@charset "UTF-8";
+
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
 @import url('./main.css');
 @import url('/css/font/dingbat_xeicon.css');
@@ -450,12 +450,13 @@ input[type='text' i] {
 
 .subM_Bg {
   background: url(./../imgs/subM_Bg.png) no-repeat center center / cover;
+  background: url(./../imgs/subM_Bg.png) no-repeat center center / cover;
   position: absolute;
+
   left: 0;
   width: 100%;
   z-index: 14;
 } 
-
 
 #header .all .HeaderBar {
   display: none;
@@ -659,12 +660,15 @@ footer {
 div .swiper-button-next,
 div .swiper-button-prev {
   color: #000;
+
 }
-.swiper-button-prev::after {
-  display: none;
+.SlidBtn .swiper-button-prev::after,
+.SlidBtn .swiper-button-next::after {
+  display: none !important;
 }
-.swiper-button-next::after {
-  display: none;
+
+.SlidBtn .swiper-navigation-icon {
+  display: none !important;
 }
 .SlideBtn > div {
   width: 1rem;
@@ -685,6 +689,7 @@ div .swiper-button-prev {
 .xi-angle-right-min {
   border: 1px solid #4c4c4c;
 }
+
 
 /* 푸터-링크 */
 
@@ -968,8 +973,9 @@ div .swiper-button-prev {
     z-index: 4;
   }
   #header .HeaderTop .mo_search {
+   
     display: block;
-      right: 36px;
+    right: 36px;
   }
 
   #header .HeaderTop .mo_search i {
